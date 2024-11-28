@@ -56,10 +56,21 @@ describe('Form inputs validated', () => {
     cy.get('[data-cy="ad-input"]').type("emre")
     cy.get('[data-cy="soyad-input"]').type("şahiner")
     cy.get('[data-cy="email-input"]').type("emre@wit.com.tr")
-    cy.get('[data-cy="password-input"]').type("1234Aa*")
+    cy.get('[data-cy="password-input"]').type("1234A5a*")
     //Asset
     cy.get('[data-cy="submit-button"]').should("not.be.disabled")     
   })
-
+  it('submits form on validated inputs', () => {
+    //Arrange
+    //cy.visit('http://localhost:5173/')
+    //Act
+    cy.get('[data-cy="ad-input"]').type("emre")
+    cy.get('[data-cy="soyad-input"]').type("şahiner")
+    cy.get('[data-cy="email-input"]').type("emre@wit.com.tr")
+    cy.get('[data-cy="password-input"]').type("12345Aa*")
+    cy.get('[data-cy="submit-button"]').click()
+    //Asset
+    cy.get('[data-cy="response-massage"]').should("be.visiable")     
+  })
 })
 })

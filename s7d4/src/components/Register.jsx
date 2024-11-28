@@ -182,7 +182,7 @@ const handleSubmit = (event) =>{
   </Button>
 </Form>
 </CardBody>
-<CardFooter>
+ <CardFooter data-cy="response-massage" >
   ID: {ıd}
 </CardFooter>
 </Card>
