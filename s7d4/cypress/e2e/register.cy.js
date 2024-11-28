@@ -1,6 +1,6 @@
 import { errorMessages } from "../../src/components/register"
-beforEach(() => {
-  cy.visit('http://localhost:5173/')
+beforeEach(() => {
+  cy.visit('http://192.168.1.30:5173/')
 })
 describe('Registe Page', () => {
   describe('Error Messages', () => {
@@ -51,7 +51,7 @@ describe('Registe Page', () => {
 describe('Form inputs validated', () => {
   it('button enabled for validated inputs', () => {
     //Arrange
-    cy.visit('http://localhost:5173/')
+    //cy.visit('http://localhost:5173/')
     //Act
     cy.get('[data-cy="ad-input"]').type("emre")
     cy.get('[data-cy="soyad-input"]').type("şahiner")
